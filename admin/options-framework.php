@@ -106,6 +106,7 @@ function optionsframework_setdefaults() {
 	$options = optionsframework_options();
 
 	// If the options haven't been added to the database yet, they are added now
+    //将配置项读入数据库，初始化主题设置项
 	foreach ($options as $option) {
 
 		if ( ($option['type'] != 'heading') && ($option['type'] != 'info') ) {
@@ -138,10 +139,11 @@ function optionsframework_setdefaults() {
 if ( !function_exists( 'optionsframework_add_page' ) ) {
 function optionsframework_add_page() {
     //添加主题管理按钮  tab
-
-	$of_page = add_menu_page('Notebook主题', 'Notebook主题设置', 'edit_theme_options', 'options-framework','optionsframework_page');
+    //添加顶级菜单  左侧
+	$of_page = add_menu_page('Diary主题', 'Diary主题', 'edit_theme_options', 'options-framework','optionsframework_page');
 
 	// Adds actions to hook in the required css and javascript
+    //同时加载必备的样式以及页面脚本
 	add_action("admin_print_styles-$of_page",'optionsframework_load_styles');
 	add_action("admin_print_scripts-$of_page", 'optionsframework_load_scripts');
 
@@ -185,7 +187,7 @@ function of_admin_head() {
  * Nonces are provided using the settings_fields()
  *
  */
-
+//配置页面生成
 if ( !function_exists( 'optionsframework_page' ) ) {
 function optionsframework_page() {
 
@@ -199,12 +201,13 @@ function optionsframework_page() {
     <?php screen_icon( 'themes' ); ?>
 
     <div id="of_container">
+        <!--后台设置主页面  form-->
        <form action="options.php" method="post">
 	  <?php settings_fields('optionsframework'); ?>
 
         <div id="header">
           <div class="logo">
-            <h2><?php esc_html_e( $themename ); ?> <?php esc_html_e( 'Options' ); ?></h2>
+            <h2><?php esc_html_e( $themename ); ?> <?php esc_html_e( '设置' ); ?></h2>
           </div>
 
           <div class="site5author">
@@ -218,9 +221,7 @@ function optionsframework_page() {
           <div id="of-nav">
             <ul>
                 <!--主题配置主题区-->
-              <?php
-             // var_dump($return[1]);exit;
-              echo $return[1]; ?>
+                <?php echo $return[1]; ?>
             </ul>
           </div>
           <div id="content">
@@ -307,7 +308,7 @@ function optionsframework_validate($input) {
 	} // end foreach
 
 	if ( isset($clean) ) {
-		add_settings_error( 'options-framework', 'save_options', __( 'Options saved.', 'site5framework' ), 'updated fade' );
+		add_settings_error( 'options-framework', 'save_options', __( '已保存.', 'site5framework' ), 'updated fade' );
 		return $clean; // Return validated input
 	}
 

@@ -14,7 +14,7 @@
 <!-- You can start editing here. -->
 
 <?php if ( have_comments() ) : ?>
-	<h2 class="h2comments" id="comments"><?php comments_number('No Comments', '1 Comment', '% Comments' );?></h2>
+	<h2 class="h2comments" id="comments"><?php comments_number('没有评论', '1 条', '% 条' );?></h2>
 
 	<ul class="commentlist" >
 	<?php wp_list_comments('callback=mytheme_comment'); ?>
@@ -25,7 +25,7 @@
 		<!-- If comments are open, but there are no comments. -->
 	 <?php else : // comments are closed ?>
 		<!-- If comments are closed. -->
-		<p class="nocomments"><?php _e("Comments are closed.", "site5framework"); ?></p>
+		<p class="nocomments"><?php _e("评论关闭.", "site5framework"); ?></p>
 
 	<?php endif; ?>
 <?php endif; ?>
@@ -35,43 +35,43 @@
 
 <div id="respond">
 
-<h2 id="commentsForm"><?php comment_form_title( 'Got anything to say? Go ahead and leave a comment!', 'Leave a comment to %s' ); ?></h2>
+<h2 id="commentsForm"><?php comment_form_title( '我来说两句', '评论 %s' ); ?></h2>
 
 <div class="cancel-comment-reply">
 	<small><?php cancel_comment_reply_link(); ?></small>
 </div>
 
 <?php if ( of_get_option('comment_registration') && !$user_ID ) : ?>
-<p><?php _e("You must be", "site5framework"); ?> <a href="<?php echo of_get_option('siteurl'); ?>/wp-login.php?redirect_to=<?php echo urlencode(get_permalink()); ?>"><?php _e("logged in", "site5framework"); ?></a> <?php _e("to post a comment.", "site5framework"); ?></p>
+<p><?php _e("You must be", "site5framework"); ?> <a href="<?php echo of_get_option('siteurl'); ?>/wp-login.php?redirect_to=<?php echo urlencode(get_permalink()); ?>"><?php _e("登录", "site5framework"); ?></a> <?php _e("to post a comment.", "site5framework"); ?></p>
 <?php else : ?>
 
 <form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
 
 <?php if ( $user_ID ) : ?>
 
-<p><?php _e("Logged in as", "site5framework"); ?> <a href="<?php echo of_get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>. <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="Log out of this account"><?php _e("Log out &raquo;", "site5framework"); ?></a></p>
+<p><?php _e("登录", "site5framework"); ?> <a href="<?php echo of_get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>. <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="Log out of this account"><?php _e("Log out &raquo;", "site5framework"); ?></a></p>
 
 <?php else : ?>
 
-<p><label for="author"><?php _e("Name", "site5framework"); ?> <?php if ($req) echo "(required)"; ?></label>
+<p><label for="author"><?php _e("姓名", "site5framework"); ?> <?php if ($req) echo "(required)"; ?></label>
 <input type="text" name="author" id="author" value="<?php echo $comment_author; ?>" size="22" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> />
 </p>
 
-<p><label for="email"><?php _e("Mail (will not be published)", "site5framework"); ?> <?php if ($req) echo "(required)"; ?></label>
+<p><label for="email"><?php _e("E-mail", "site5framework"); ?> <?php if ($req) echo "(required)"; ?></label>
 <input type="text" name="email" id="email" value="<?php echo $comment_author_email; ?>" size="22" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> />
 </p>
 
-<p><label for="url"><?php _e("Website", "site5framework"); ?></label>
+<p><label for="url"><?php _e("网址", "site5framework"); ?></label>
 <input type="text" name="url" id="url" value="<?php echo $comment_author_url; ?>" size="22" tabindex="3" />
 </p>
 
 <?php endif; ?>
 
 
-<p><label for="comment"><?php _e("Comment", "site5framework"); ?></label>
+<p><label for="comment"><?php _e("评论内容", "site5framework"); ?></label>
 <textarea name="comment" id="comment" rows="10" tabindex="4"></textarea></p>
 <!--<p><small><strong>XHTML:</strong> You can use these tags: <code><?php echo allowed_tags(); ?></code></small></p>-->
-<p><input name="submit" type="submit" id="submit" tabindex="5" value="<?php _e("POST COMMENT", "site5framework"); ?>" />
+<p><input name="submit" type="submit" id="submit" tabindex="5" value="<?php _e("提交", "site5framework"); ?>" />
 <?php comment_id_fields(); ?>
 </p>
 <?php do_action('comment_form', $post->ID); ?>

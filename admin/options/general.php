@@ -1,4 +1,5 @@
 <?php
+//为了中文显示菜单项 我添加了  title属性组
     $options[] = array( "name" => "general",
                         "title" => "常规",
 						"sicon" => "advancedsettings.png",

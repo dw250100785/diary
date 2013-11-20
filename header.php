@@ -80,7 +80,7 @@
 			<span><?php bloginfo( 'description');?></span>	  </div>
 	 <div id="topSearch">
 		<form id="searchform" action="<?php bloginfo( 'url' ); ?>" method="get">
-			<input type="text" id="s" name="s" value="<?php _e("type your search and hit enter", "site5framework"); ?>" onFocus="this.value=''" />
+			<input type="text" id="s" name="s" value="<?php _e("搜索", ""); ?>" onFocus="this.value=''" />
 		</form>
 	</div>
 	</header>

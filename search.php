@@ -3,7 +3,7 @@
 		<!-- Begin Main Content ( left col ) -->
 		<section id="main-content">
 		<div id="archive-title">
-			<?php _e("Search results for", "site5framework"); ?> <strong>"<?php /* Search Count */ $allsearch = &new WP_Query("s=$s&showposts=-1"); $key = wp_specialchars($s, 1); $count = $allsearch->post_count; _e(''); _e('"'); echo $key; _e('"'); wp_reset_query(); ?>"</strong>
+			<?php _e("搜索结果", "site5framework"); ?> <strong>"<?php /* Search Count */ $allsearch = &new WP_Query("s=$s&showposts=-1"); $key = wp_specialchars($s, 1); $count = $allsearch->post_count; _e(''); _e('"'); echo $key; _e('"'); wp_reset_query(); ?>"</strong>
 		</div>
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>	
 				<!-- Begin Article -->
@@ -20,7 +20,7 @@
 				<!-- End Article -->
 			<?php endwhile; ?>
 	<?php else : ?>
-		<p><?php _e("Sorry, but you are looking for something that isn't here.", "site5framework"); ?></p>
+		<p><?php _e("没有相关内容.", "site5framework"); ?></p>
 	<?php endif; ?>
 		<?php if (function_exists("emm_paginate")) {
 				emm_paginate();
