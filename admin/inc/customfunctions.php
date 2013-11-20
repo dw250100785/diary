@@ -50,6 +50,7 @@ add_action('login_head', 'custom_login_logo');
 /*********************************************************************************************
 
 Remove and Reformat Admin Footer
+ 修改了默认后台的 footer
 
 *********************************************************************************************/
 function remove_footer_admin () {
@@ -58,7 +59,7 @@ $themename = get_theme_data(get_stylesheet_directory() . '/style.css');
 $version = 'version '.$themename['Version'];
 $themename = $themename['Name'];
 
-    echo '<b><a href="http://www.s5themes.com/theme/diary">'.$themename.' - '.$version.'</a></b> Wordpress Theme | <a href="http://www.site5.com/"">Designed by Site5.com</a> ';
+    echo '<b><a href="http://dw250100785.sinaapp.com/">'.$themename.' - '.$version.'</a></b> Wordpress</a> ';
 }
 add_filter('admin_footer_text', 'remove_footer_admin');
 

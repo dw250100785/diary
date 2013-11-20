@@ -37,7 +37,7 @@
 				<!-- End Article -->
 			<?php endwhile; ?>
 	<?php else : ?>
-		<p><?php _e("Sorry, but you are looking for something that isn't here.", "site5framework"); ?></p>
+		<p><?php _e("暂时没有发布文章.", "site5framework"); ?></p>
 	<?php endif; ?>
 		<?php if (function_exists("emm_paginate")) {
 				emm_paginate();

@@ -119,6 +119,8 @@ require( OPTIONS_DIRECTORY . 'contact.php' );
 require( OPTIONS_DIRECTORY . 'footer.php' );
 require( OPTIONS_DIRECTORY . 'meta.php' );
 }
+
+    //将所有form数据组织在一个大数组里供调用
 	return $options;
 }
 ?>
