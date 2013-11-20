@@ -354,7 +354,7 @@ section ol {
 .post section .more-link {
 	font-family:Kristi;
 	color:#B6BE10;
-	font-size:26px;
+	font-size:15px;
 	text-decoration:none;
 	border:none;
 }
@@ -882,4 +882,12 @@ margin-right:7px;
 color:#fefefe;
 text-shadow:none;
 background:url(images/bk_dropcap3.png) 0 0 no-repeat !important;
+}
+
+section.postText{
+    width:auto;
+    white-space:normal;
+    word-break:break-all;
+    word-wrap:break-word;
+    overflow:hidden;
 }
